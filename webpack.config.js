@@ -88,15 +88,31 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      title: "project demo",
       template: "src/index.pug",
       inject: "body",
     }),
 
     new HtmlWebpackPlugin({
-      title: "project demo",
       filename: "pages/noticias.html",
       template: "src/pages/noticias.pug",
+      inject: "false",
+    }),
+
+    new HtmlWebpackPlugin({
+      filename: "partials/footer.html",
+      template: "src/partials/footer.pug",
+      inject: "body",
+    }),
+
+    new HtmlWebpackPlugin({
+      filename: "partials/head.html",
+      template: "src/partials/head.pug",
+      inject: "false",
+    }),
+
+    new HtmlWebpackPlugin({
+      filename: "partials/header.html",
+      template: "src/partials/header.pug",
       inject: "false",
     }),
 

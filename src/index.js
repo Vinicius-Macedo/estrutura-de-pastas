@@ -1,5 +1,5 @@
 import "./assets/scss/main.scss";
-// require("./index.pug");
+require("./index.pug");
 
 const toggleIcon = document.getElementById("toggle-icon");
 const overlayDiv = document.getElementById("overlay");
