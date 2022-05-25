@@ -1,0 +1,271 @@
+.generic-container {
+  @apply mb-32;
+}
+
+.banner-container,
+.banner-container-top {
+  @apply my-16 bg-darkGrey flex justify-center items-center;
+}
+
+.banner-container-top {
+  @apply w-full
+  h-50
+  sm:h-75
+  md:h-125;
+
+  @media screen and (min-width: 1366px) {
+    width: 1110px;
+    padding: 0px;
+    margin: 24px auto;
+  }
+}
+
+
+
+.texto-noticia {
+  line-height: 31.5px;
+  @apply overflow-y-hidden 
+  text-base;
+}
+
+.overlay-texto {
+  background: linear-gradient(360deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+  @apply absolute 
+  w-full 
+  h-80 
+  left-0 
+  bottom-0;
+}
+
+.input-boletim {
+  @apply h-18 
+  rounded-full
+  indent-8
+  my-4
+  focus:bg-grey
+  focus:outline-none;
+}
+
+.mobile-title {
+  @apply font-montserrat font-bold text-semi relative;
+}
+
+.line-after::after {
+  content: "";
+  @apply absolute w-40 h-2 bg-orange left-0 -bottom-4 rounded-full;
+}
+
+.noticias,
+.noticias-desktop {
+  @apply flex flex-wrap justify-between;
+
+  .noticias-li {
+    @apply pb-8  mb-16 border-solid border-grey border-b relative;
+
+    &:last-child {
+      @apply mb-0;
+    }
+
+    .noticias-figure {
+      .noticias-img {
+        @apply w-full h-75 rounded object-cover;
+      }
+    }
+
+    .noticias-topico {
+      @apply absolute top-0 left-0 rounded w-53 h-15 text-center flex justify-center items-center bg-orange text-white font-bold;
+    }
+
+    .noticias-title {
+      @apply my-8 mobile-title;
+    }
+  }
+}
+
+.noticias {
+  .noticias-li a {
+    @apply sm:flex lg:block xl:gap-8;
+
+    @media screen and (min-width: 1279px) {
+      display: grid;
+      grid-template-columns: 105px 1fr;
+    }
+
+    article {
+      .noticias-text {
+        @apply my-8 pb-8 text-base;
+      }
+    }
+
+    .noticias-topico {
+      @apply sm:block 
+      sm:text-left 
+      sm:mt-0 sm:static 
+      sm:bg-transparent 
+      sm:text-orange
+      lg:pt-2
+      xl:pt-0
+      xl:font-normal;
+    }
+
+    .noticias-figure {
+      @apply sm:my-0;
+
+      .noticias-img {
+        @apply sm:w-200
+        sm:h-full
+        lg:h-50;
+      }
+    }
+
+    article {
+      @apply sm:w-full;
+
+      .noticias-topico {
+        @apply sm:text-original;
+      }
+
+      .noticias-title {
+        @apply sm:top-0
+        sm:m-0
+        sm:text-semi
+        lg:text-base
+        xl:text-original;
+      }
+
+      .noticias-text {
+        @apply text-original;
+      }
+    }
+
+    article {
+      @apply sm:ml-16
+      lg:ml-0;
+    }
+  }
+}
+
+.noticias-desktop {
+  @apply lg:grid
+  lg:grid-cols-2
+  lg:justify-between
+  xl:grid-cols-3;
+
+  .noticias-li {
+    @apply lg:mr-16;
+
+    .noticias-figure {
+      .noticias-img {
+        @apply sm:h-100
+        md:h-120
+        lg:h-80;
+      }
+    }
+  }
+}
+
+.center-container {
+  @apply w-full text-center mt-8;
+}
+
+.ver-mais {
+  @apply sm:text-base p-4 underline font-bold;
+}
+
+.fatos {
+  @apply mt-18;
+
+  .fatos-li {
+    @apply h-40 border-b border-grey border-solid;
+
+    .fatos-text {
+      @apply font-bold font-montserrat flex justify-start items-center h-full w-full xl:hover:bg-grey;
+    }
+  }
+}
+
+.social-container {
+  @apply items-center flex mt-12 flex-wrap;
+
+  .social-media-a {
+    @apply my-2 px-6 lg:px-3;
+
+    &:first-child {
+      @apply pl-0;
+    }
+
+    .social-media-img {
+      @apply w-17 h-17 sm:w-23 sm:h-23 lg:w-17;
+    }
+  }
+}
+
+.imprimir-container {
+  @apply p-8
+  flex
+  flex-col
+  items-center;
+
+  .imprimir-img {
+    @apply w-13
+    h-13;
+  }
+
+  .imprimir-text {
+    @apply font-bold 
+    text-base;
+  }
+}
+
+.input-container {
+  @apply flex flex-col mt-8;
+
+  .input-label {
+    @apply text-darkGrey-2;
+  }
+
+  .input-field {
+    @apply mt-1 text-black indent-4 w-full h-24 bg-lightGrey;
+
+    .option-text {
+      @apply text-black;
+    }
+  }
+}
+
+.layout-container {
+  @apply px-8
+  sm:px-16 
+  md:px-24 
+  xl:px-64;
+
+  @media screen and (min-width: 1023px) {
+    display: grid;
+    grid-template-columns: 1fr 255px;
+  }
+
+  @media screen and (min-width: 1279px) {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+  }
+
+  @media screen and (min-width: 1366px) {
+    display: grid;
+    grid-template-columns: 1fr 310px;
+    margin: auto;
+    width: 1110px;
+    padding: initial 0px;
+  }
+}
+
+.categoria-text {
+  @apply font-bold my-4 px-8 mt-8 
+  sm:text-base;
+
+  @media screen and (min-width: 1366px) {
+    margin: auto;
+    width: 1110px;
+    padding-left: 0;
+  }
+}
+

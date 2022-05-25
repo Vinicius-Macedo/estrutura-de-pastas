@@ -1,5 +1,5 @@
-import "./scss/main.scss";
-require("./index.html");
+import "./assets/scss/main.scss";
+// require("./index.pug");
 
 const toggleIcon = document.getElementById("toggle-icon");
 const overlayDiv = document.getElementById("overlay");
@@ -58,6 +58,7 @@ function showMore() {
   overlayNoticia.style.display = "none";
   btnShowMore.style.display = "none";
 }
+
 
 
 // const liDropdown = document.querySelector('.navlist-li-drop');

@@ -2,6 +2,8 @@ const path = require("path");
 const CopyPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPartialsPlugin = require("html-webpack-partials-plugin");
+const ImageminPlugin = require("imagemin-webpack");
 
 module.exports = {
   mode: "development",
@@ -27,12 +29,31 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.html$/,
-        loader: "raw-loader",
+        test: /\.pug$/,
+        use: [{ loader: "raw-loader" }, { loader: "pug-html-loader" }],
       },
+      //  {
+      //   test: /\.html$/,
+      //   loader: "html-loader",
+      // },
       // {
-      //   test: /\.(png|jpg|gif|svg|eot|ttf|woff)$/,
-      //   type: "asset/resource",
+      //   test: /\.html$/,
+      //   loader: "raw-loader",
+      // },
+      // {
+      //   test: /\.(png|jpg|jpeg|gif|svg|eot|ttf|woff)$/,
+      //   use: [
+      //     loader : ImageminPlugin.loader,
+      //       options: {
+      //         bail:false,
+      //         cache: false,
+      //         imagemOptions: {
+      //           this.plugins: [
+
+      //           ]
+      //         }
+      //       },
+      //   ]
       // },
       // {
       //   test: /\.js$/,
@@ -43,20 +64,15 @@ module.exports = {
         test: /\.scss$/,
         use: [
           MiniCssExtractPlugin.loader,
-          "css-loader",
-          "sass-loader",
-          "postcss-loader",
+          { loader: "css-loader", options: { importLoaders: 2 } },
+          { loader: "postcss-loader" },
+          { loader: "sass-loader" },
         ],
+        
       },
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      title: "Webpack App",
-      filename: "index.html",
-      template: "src/index.html",
-      inject: "body",
-    }),
 
     new MiniCssExtractPlugin({
       filename: "assets/css/main.css",
@@ -70,6 +86,20 @@ module.exports = {
         },
       ],
     }),
+
+    new HtmlWebpackPlugin({
+      title: "project demo",
+      template: "src/index.pug",
+      inject: "body",
+    }),
+
+    new HtmlWebpackPlugin({
+      title: "project demo",
+      filename: "pages/noticias.html",
+      template: "src/pages/noticias.pug",
+      inject: "false",
+    }),
+
   ],
 
   devtool: "source-map",

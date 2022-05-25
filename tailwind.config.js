@@ -580,6 +580,7 @@ module.exports = {
       },
       colors: {
         'white': '#ffffff',
+        'white-2': '#fdfdfd',
         'background': '#ffffff',
         'orange':'#faa300',
         'lightOrange':'#faac1a',

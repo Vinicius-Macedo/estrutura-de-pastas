@@ -1,0 +1,16 @@
+@use "sass:meta";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@include meta.load-css('layout/header');
+@include meta.load-css('layout/footer');
+@include meta.load-css('pages/noticia');
+
+.sexxxxxxxx{
+  background: #f0f4f0;
+}
+
+
+
